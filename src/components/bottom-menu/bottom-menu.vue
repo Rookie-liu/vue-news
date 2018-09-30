@@ -2,10 +2,10 @@
   <div class="bottomMenu">
     <div class="model" :class="model">
       <div class="menu" @click="goBack"><i class="icon iconfont icon-back"></i></div>
-      <div class="menu" @click="goNext"><i class="icon iconfont icon-moreunfold"></i></div>
+      <!-- <div class="menu" @click="goNext"><i class="icon iconfont icon-moreunfold"></i></div> -->
       <div class="menu" :class="{'isThumbUp':thumb}" @click="thumbUp"><i class="icon iconfont icon-dianzan"></i><span
         class="extra">{{this.$store.state.popularity}}</span></div>
-      <div class="menu" @click="showShare"><i class="icon iconfont icon-fenxiang"></i></div>
+      <!-- <div class="menu" @click="showShare"><i class="icon iconfont icon-fenxiang"></i></div> -->
       <div class="menu" @click="goComments(newId)"><i class="icon iconfont icon-pinglun"></i><span class="extra"
                                                                                                    v-if="this.$store.state.comments != 0">{{this.$store.state.comments}}</span>
       </div>

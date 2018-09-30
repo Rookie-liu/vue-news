@@ -1,7 +1,7 @@
 /**
  * Created by luowendi on 2017/4/16.
  */
-import * as types from './mutation_types'
+import * as types from "./mutation_types";
 
 // export default {
 //   //改变当前主题id
@@ -45,20 +45,20 @@ import * as types from './mutation_types'
 //     commit(types.CHANGE_GO_TYPES,id)
 //   },
 //   //增加主题新闻数据
-//   addTheme:({commit},payload) => {
-//     commit(types.ADD_THEME,payload)
-//   },
-//   addThemeIds:({commit},ids) => {
-//     commit(types.ADD_THEME_NEWID,ids)
-//   },
+// addTheme: ({ commit }, payload) => {
+//   commit(types.ADD_THEME, payload);
+// },
+// addThemeIds: ({ commit }, ids) => {
+//   commit(types.ADD_THEME_NEWID, ids);
+// },
 //   //改变主编id
 //   addEditorId:({commit},payload) => {
 //     commit(types.ADD_EDITOR_ID,payload)
 //   },
 //   //增加全部加载过的新闻到数组
-//   addAllNews:({commit},stories) => {
-//     commit(types.ADD_ALL_NEWS,stories)
-//   },
+// addAllNews: ({ commit }, stories) => {
+//   commit(types.ADD_ALL_NEWS, stories);
+// }
 //   //添加下一篇新闻id
 //   addNextId:({commit},id) => {
 //     commit(types.ADD_NEXT_ID,id)
@@ -87,30 +87,50 @@ import * as types from './mutation_types'
 //   addHomePageDateStr:({commit},dateStr) => {
 //     commit(types.ADD_HOMEPAGE_DATE_STR,dateStr)
 //   }
-// }
+// };
 
-export function addNews({commit, state}, {stories, ids}) {
-  let nStories = state.stories.slice()
-  let nIds = state.ids.slice()
-
-  let newStories = nStories.concat(stories)
-  let newIds = nIds.concat(ids)
-
-  commit(types.ADD_NEWS, newStories)
-  commit(types.ADD_IDS, newIds)
+//   //判断收藏状态
+export function judgeCollectState({ commit }) {
+  commit(types.JUDGE_COLLECT_STATE);
+}
+//   //改变收藏状态
+export function changeCollectState({ commit }) {
+  commit(types.CHANGE_COLLECT_STATE);
 }
 
-export function addDate({commit}, date) {
-  commit(types.ADD_DATE, date)
-  commit(types.ADD_HOMEPAGE_DATE, date)
+export function addAllNews({ commit }, stories) {
+  commit(types.ADD_ALL_NEWS, stories);
 }
 
-export function addDateStr({commit}, dateStr) {
-  commit(types.ADD_DATE_STR, dateStr)
-  commit(types.ADD_HOMEPAGE_DATE_STR, dateStr)
+export function addTheme({ commit }, payload) {
+  commit(types.ADD_THEME, payload);
+}
+export function addThemeIds({ commit }, ids) {
+  commit(types.ADD_THEME_NEWID, ids);
 }
 
-export function setGoType({commit, state}, {id,type}) {
-  commit(types.ADD_NEW_ID, id)
-  commit(types.CHANGE_GO_TYPES, type)
+export function addNews({ commit, state }, { stories, ids }) {
+  let nStories = state.stories.slice();
+  let nIds = state.ids.slice();
+
+  let newStories = nStories.concat(stories);
+  let newIds = nIds.concat(ids);
+
+  commit(types.ADD_NEWS, newStories);
+  commit(types.ADD_IDS, newIds);
+}
+
+export function addDate({ commit }, date) {
+  commit(types.ADD_DATE, date);
+  commit(types.ADD_HOMEPAGE_DATE, date);
+}
+
+export function addDateStr({ commit }, dateStr) {
+  commit(types.ADD_DATE_STR, dateStr);
+  commit(types.ADD_HOMEPAGE_DATE_STR, dateStr);
+}
+
+export function setGoType({ commit, state }, { id, type }) {
+  commit(types.ADD_NEW_ID, id);
+  commit(types.CHANGE_GO_TYPES, type);
 }
